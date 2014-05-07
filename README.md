@@ -2,14 +2,13 @@ promise
 =======
 
 Lua promises
+------------
 
-Supports lua coroutines and nginx light threads
+*Supports lua coroutines and nginx light threads*
 
-
+```lua
 local p = require 'promise'()
-
 local id = p:start(function() return 'foo', 'bar' end)
-
 local foo, bar = p:fetch(id)
 
 if not foo then error(bar) end
@@ -31,3 +30,5 @@ while true do
   print(foo)
   print(bar)
 end
+```
+
